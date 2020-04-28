@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace CourseProject
 {
-    class Square : Shape
+    class Circle : Shape
     {
-        protected int height { get; set; }
+        public int radius { get; set; }
         public string color { get; set; }
         public Location loc { get; set; }
         public int size { get; set; }
 
-        public Square(int height, Location loc, string color)
+        public Circle(int radius, Location loc, string color)
         {
-            this.height = height;
+            this.radius = radius;
             this.loc = loc;
             this.color = color;
         }
 
-        public virtual string drawShape()
+        public string drawShape()
         {
-            return "Square";
+            return "Circle";
         }
 
-        public virtual int shapeArea()
+        public int shapeArea()
         {
             throw new NotImplementedException();
         }

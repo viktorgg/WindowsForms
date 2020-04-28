@@ -17,9 +17,14 @@ namespace CourseProject
             this.color = color;
         }
 
-        public override void drawShape()
+        public override string drawShape()
         {
-            //
+            return "Rectangle";
+        }
+
+        public override int shapeArea()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -12,6 +12,7 @@ namespace CourseProject
         string color { get; set; }
         Location loc { get; set; }
         int size { get; set; }
-        void drawShape();
+        string drawShape();
+        int shapeArea();
     }
 }
