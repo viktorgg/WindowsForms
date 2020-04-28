@@ -1,0 +1,9 @@
+C:\Users\ViktorG\source\repos\CourseProject\bin\Debug\CourseProject.exe.config
+C:\Users\ViktorG\source\repos\CourseProject\bin\Debug\CourseProject.exe
+C:\Users\ViktorG\source\repos\CourseProject\bin\Debug\CourseProject.pdb
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.csprojAssemblyReference.cache
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.Properties.Resources.resources
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.csproj.GenerateResource.cache
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.exe
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.pdb
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.Form1.resources
