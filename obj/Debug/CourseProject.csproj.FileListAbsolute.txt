@@ -7,3 +7,7 @@ C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.csproj.Gener
 C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.exe
 C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.pdb
 C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.Form1.resources
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.Form2.resources
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.Form3.resources
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.BaseFormProperties.resources
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.Form4.resources

@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace CourseProject
 {
-    interface Shape
+    public interface Shape
     {
-        string color { get; set; }
+        string name { get; set; }
+        Color color { get; set; }
         Location loc { get; set; }
-        int size { get; set; }
-        string drawShape();
-        int shapeArea();
+        double shapeArea();
+        double shapePerimeter();
+        void drawShape(Graphics graphics);
+        void fillShape(Graphics graphics);
     }
 }

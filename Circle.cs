@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,26 +9,42 @@ namespace CourseProject
 {
     class Circle : Shape
     {
-        public int radius { get; set; }
-        public string color { get; set; }
+        public string name { get; set; }
+        public int diameter { get; set; }
+        public Color color { get; set; }
         public Location loc { get; set; }
-        public int size { get; set; }
 
-        public Circle(int radius, Location loc, string color)
+        public Circle(string name, Location loc, int diameter, Color color)
         {
-            this.radius = radius;
+            this.name = name;
+            this.diameter = diameter;
             this.loc = loc;
             this.color = color;
         }
 
-        public string drawShape()
+        public void drawShape(Graphics graphics)
         {
-            return "Circle";
+            Pen pen = new Pen(color, 3);
+            graphics.DrawEllipse(pen, loc.x, loc.y, diameter, diameter);
         }
 
-        public int shapeArea()
+        public void fillShape(Graphics graphics)
         {
-            throw new NotImplementedException();
+            Brush brush = new SolidBrush(Color.White);
+            graphics.FillEllipse(brush, loc.x, loc.y, diameter, diameter);
+        }
+
+        public double shapeArea()
+        {
+            int radius = diameter / 2;
+            return Math.PI * radius * radius;
+        }
+
+        public double shapePerimeter()
+        {
+            int radius = diameter / 2;
+            return 2 * Math.PI * radius;
+
         }
     }
 }

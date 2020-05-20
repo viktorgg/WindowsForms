@@ -12,7 +12,6 @@ namespace CourseProject
 {
     public partial class Form1 : Form
     {
-        private List<Shape> shapes = new List<Shape>();
         public Form1()
         {
             InitializeComponent();
@@ -20,26 +19,29 @@ namespace CourseProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Location loc = new Location(5, 10);
-            Shape rec = new Rectangle(1, 1, loc, "Blue");
-            shapes.Add(rec);
-            MessageBox.Show(rec.drawShape());
+            Form2 form2 = new Form2(this);
+            form2.Show();
+            CanvasManager.InitListBox(listBox1);
+            CanvasManager.AddCanvas(form2);
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Location loc = new Location(5, 10);
-            Shape square = new Square(1, loc, "Blue");
-            shapes.Add(square);
-            MessageBox.Show(square.drawShape());
+            Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Location loc = new Location(5, 10);
-            Shape circle = new Circle(1, loc, "Blue");
-            shapes.Add(circle);
-            MessageBox.Show(circle.drawShape());
+            if (CanvasManager.OpenCanvas())
+            {
+                Hide();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CanvasManager.RemoveCanvas();
         }
     }
 }
