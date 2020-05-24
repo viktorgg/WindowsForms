@@ -51,6 +51,13 @@ namespace CourseProject
             canDraw = true;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Pick a position with mouse on canvas!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            selectedShape = AvailableShapes.Triangle;
+            canDraw = true;
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Pick a position with mouse on canvas!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -81,8 +88,7 @@ namespace CourseProject
         {
             if (selectedShape.Equals(AvailableShapes.Rectangle))
             {
-                string shapeName = "Shape" + shapeNumIncrement;
-                Form3 form = new Form3(shapeName, loc);
+                Form3 form = new Form3(new Rectangle("Shape " + shapeNumIncrement, loc, 50, 50, Color.Black));
                 form.ShowDialog();
 
                 if (form.shape != null)
@@ -98,8 +104,7 @@ namespace CourseProject
             }
             else if (selectedShape.Equals(AvailableShapes.Circle))
             {
-                string shapeName = "Shape" + shapeNumIncrement;
-                Form4 form = new Form4(shapeName, loc);
+                Form4 form = new Form4(new Circle("Shape " + shapeNumIncrement, loc, 50, Color.Black));
                 form.ShowDialog();
 
                 if (form.shape != null)
@@ -110,6 +115,19 @@ namespace CourseProject
 
                     addShape(circle);
                     circle.drawShape(graphics);
+                    shapeNumIncrement++;
+                }
+            }
+            else if (selectedShape.Equals(AvailableShapes.Triangle))
+            {
+                Form5 form = new Form5(new Triangle("Shape " + shapeNumIncrement, loc, Color.Black, 50));
+                form.ShowDialog();
+
+                if (form.shape != null)
+                {
+                    Triangle triangle = (Triangle)form.shape;
+                    addShape(triangle);
+                    triangle.drawShape(graphics);
                     shapeNumIncrement++;
                 }
             }
@@ -162,7 +180,7 @@ namespace CourseProject
         {
             if (shapeToEdit is Rectangle)
             {
-                Form3 form = new Form3(shapeToEdit.name, shapeToEdit.loc);
+                Form3 form = new Form3(shapeToEdit);
                 form.ShowDialog();
                 shapes.Remove(shapeToEdit);
                 shapes.Add(form.shape);
@@ -171,7 +189,16 @@ namespace CourseProject
             }
             else if (shapeToEdit is Circle)
             {
-                Form4 form = new Form4(shapeToEdit.name, shapeToEdit.loc);
+                Form4 form = new Form4(shapeToEdit);
+                form.ShowDialog();
+                shapes.Remove(shapeToEdit);
+                shapes.Add(form.shape);
+                refreshCanvas();
+                shapeToEdit = null;
+            }
+            else if (shapeToEdit is Triangle)
+            {
+                Form5 form = new Form5(shapeToEdit);
                 form.ShowDialog();
                 shapes.Remove(shapeToEdit);
                 shapes.Add(form.shape);
@@ -214,5 +241,7 @@ namespace CourseProject
             Hide();
             Show();
         }
+
+
     }
 }

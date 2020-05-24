@@ -11,3 +11,4 @@ C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.Form2.resour
 C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.Form3.resources
 C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.BaseFormProperties.resources
 C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.Form4.resources
+C:\Users\ViktorG\source\repos\CourseProject\obj\Debug\CourseProject.Form5.resources

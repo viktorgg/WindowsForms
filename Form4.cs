@@ -12,11 +12,14 @@ namespace CourseProject
 {
     public partial class Form4 : BaseFormProperties
     {
-        public Form4(string name, Location loc) : base(name, loc)
+        public Form4(Shape shape) : base(shape)
         {
             InitializeComponent();
-            textBox2.Text = loc.x.ToString();
-            textBox3.Text = loc.y.ToString();
+            Circle oldCircle = (Circle)shape;
+            textBox1.Text = oldCircle.diameter.ToString();
+            textBox2.Text = oldCircle.loc.x.ToString();
+            textBox3.Text = oldCircle.loc.y.ToString();
+            comboBox1.Text = oldCircle.color.Name;
         }
 
         public override void button1_Click(object sender, EventArgs e)
@@ -24,7 +27,7 @@ namespace CourseProject
             int diamater = int.Parse(textBox1.Text);
             Color color = Color.FromName(comboBox1.SelectedItem.ToString());
             Location newLoc = new Location(int.Parse(textBox2.Text), int.Parse(textBox3.Text));
-            shape = new Circle(name, newLoc, diamater, color);
+            shape = new Circle(shape.name, newLoc, diamater, color);
             Close();
         }
     }

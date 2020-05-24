@@ -13,19 +13,16 @@ namespace CourseProject
     public partial class BaseFormProperties : Form
     {
         public Shape shape { get; set; }
-        public string name;
-        public Location loc;
 
         public BaseFormProperties()
         {
             InitializeComponent();
         }
 
-        public BaseFormProperties(string name, Location loc)
+        public BaseFormProperties(Shape shapeToEdit)
         {
             InitializeComponent();
-            this.name = name;
-            this.loc = loc;
+            shape = shapeToEdit;
         }
 
         public virtual void button1_Click(object sender, EventArgs e) { }

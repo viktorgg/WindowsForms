@@ -10,26 +10,24 @@ using System.Windows.Forms;
 
 namespace CourseProject
 {
-    public partial class Form3 : BaseFormProperties
+    public partial class Form5 : BaseFormProperties
     {
-        public Form3(Shape shape) : base(shape)
+        public Form5(Shape shape) : base(shape)
         {
             InitializeComponent();
-            Rectangle oldRec = (Rectangle)shape;
-            textBox1.Text = oldRec.width.ToString();
-            textBox2.Text = oldRec.height.ToString();
-            textBox4.Text = oldRec.loc.x.ToString();
-            textBox3.Text = oldRec.loc.y.ToString();
-            comboBox1.Text = oldRec.color.Name;
+            Triangle oldTriangle = (Triangle)shape;
+            textBox1.Text = oldTriangle.side.ToString();
+            textBox4.Text = oldTriangle.loc.x.ToString();
+            textBox3.Text = oldTriangle.loc.y.ToString();
+            comboBox1.Text = oldTriangle.color.Name;
         }
 
         public override void button1_Click(object sender, EventArgs e)
         {
-            int width = int.Parse(textBox1.Text);
-            int height = int.Parse(textBox2.Text);
+            int side = int.Parse(textBox1.Text);
             Color color = Color.FromName(comboBox1.SelectedItem.ToString());
             Location newLoc = new Location(int.Parse(textBox4.Text), int.Parse(textBox3.Text));
-            shape = new Rectangle(shape.name, newLoc, width, height, color);
+            shape = new Triangle(shape.name, newLoc, color, side);
             Close();
         }
     }

@@ -9,28 +9,55 @@ namespace CourseProject
 {
     class Triangle : Shape
     {
+        private Location firstAngle { get; set; }
+        private Location secondAngle { get; set; }
+        private Location thirdAngle { get; set; }
         public string name { get; set; }
         public Color color { get; set; }
         public Location loc { get; set; }
+        public int side { get; set; }
+
+        public Triangle(string name, Location loc, Color color, int side)
+        {
+            this.name = name;
+            this.loc = loc;
+            this.color = color;
+            this.side = side;
+            firstAngle = new Location(loc.x - side / 2, loc.y + side / 2);
+            secondAngle = new Location(loc.x + side / 2, loc.y + side / 2);
+            thirdAngle = new Location(loc.x, loc.y - side / 2);
+        }
 
         public void drawShape(Graphics graphics)
         {
-            throw new NotImplementedException();
+            Pen pen = new Pen(color, 3);
+            graphics.DrawPolygon(pen, configurePoints());
         }
 
         public void fillShape(Graphics graphics)
         {
-            throw new NotImplementedException();
+            Brush brush = new SolidBrush(Color.White);
+            graphics.FillPolygon(brush, configurePoints());
         }
 
         public double shapeArea()
         {
-            throw new NotImplementedException();
+            int h = firstAngle.y - thirdAngle.y;
+            return side * h / 2;
         }
 
         public double shapePerimeter()
         {
-            throw new NotImplementedException();
+            return side * 3;
+        }
+
+        private PointF[] configurePoints()
+        {
+            PointF angle = new PointF(firstAngle.x, firstAngle.y);
+            PointF angle2 = new PointF(secondAngle.x, secondAngle.y);
+            PointF angle3 = new PointF(thirdAngle.x, thirdAngle.y);
+            PointF[] curvePoints = { angle, angle2, angle3 };
+            return curvePoints;
         }
     }
 }
