@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,13 +17,15 @@ namespace CourseProject
         public Color color { get; set; }
         public Location loc { get; set; }
         public int side { get; set; }
+        public int angle { get; set; }
 
-        public Triangle(string name, Location loc, Color color, int side)
+        public Triangle(string name, Location loc, Color color, int side, int angle)
         {
             this.name = name;
             this.loc = loc;
             this.color = color;
             this.side = side;
+            this.angle = angle;
             firstAngle = new Location(loc.x - side / 2, loc.y + side / 2);
             secondAngle = new Location(loc.x + side / 2, loc.y + side / 2);
             thirdAngle = new Location(loc.x, loc.y - side / 2);
@@ -31,13 +34,25 @@ namespace CourseProject
         public void drawShape(Graphics graphics)
         {
             Pen pen = new Pen(color, 3);
-            graphics.DrawPolygon(pen, configurePoints());
+            using (Matrix m = new Matrix())
+            {
+                m.RotateAt(angle, new PointF(loc.x, loc.y));
+                graphics.Transform = m;
+                graphics.DrawPolygon(pen, configurePoints());
+                graphics.ResetTransform();
+            }
         }
 
         public void fillShape(Graphics graphics)
         {
             Brush brush = new SolidBrush(Color.White);
-            graphics.FillPolygon(brush, configurePoints());
+            using (Matrix m = new Matrix())
+            {
+                m.RotateAt(angle, new PointF(loc.x, loc.y));
+                graphics.Transform = m;
+                graphics.FillPolygon(brush, configurePoints());
+                graphics.ResetTransform();
+            }
         }
 
         public double shapeArea()

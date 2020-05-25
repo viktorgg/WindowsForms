@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,14 +89,12 @@ namespace CourseProject
         {
             if (selectedShape.Equals(AvailableShapes.Rectangle))
             {
-                Form3 form = new Form3(new Rectangle("Shape " + shapeNumIncrement, loc, 50, 50, Color.Black));
+                Form3 form = new Form3(new Rectangle("Shape " + shapeNumIncrement, loc, 50, 50, Color.Black, 0));
                 form.ShowDialog();
 
                 if (form.shape != null)
                 {
                     Rectangle rec = (Rectangle)form.shape;
-                    rec.loc.x -= rec.width / 2;
-                    rec.loc.y -= rec.height / 2;
 
                     addShape(rec);
                     rec.drawShape(graphics);
@@ -110,8 +109,6 @@ namespace CourseProject
                 if (form.shape != null)
                 {
                     Circle circle = (Circle)form.shape;
-                    circle.loc.x -= circle.diameter / 2;
-                    circle.loc.y -= circle.diameter / 2;
 
                     addShape(circle);
                     circle.drawShape(graphics);
@@ -120,12 +117,13 @@ namespace CourseProject
             }
             else if (selectedShape.Equals(AvailableShapes.Triangle))
             {
-                Form5 form = new Form5(new Triangle("Shape " + shapeNumIncrement, loc, Color.Black, 50));
+                Form5 form = new Form5(new Triangle("Shape " + shapeNumIncrement, loc, Color.Black, 50, 0));
                 form.ShowDialog();
 
                 if (form.shape != null)
                 {
                     Triangle triangle = (Triangle)form.shape;
+
                     addShape(triangle);
                     triangle.drawShape(graphics);
                     shapeNumIncrement++;

@@ -13,6 +13,7 @@ namespace CourseProject
         public int diameter { get; set; }
         public Color color { get; set; }
         public Location loc { get; set; }
+        public int angle { get; set; }
 
         public Circle(string name, Location loc, int diameter, Color color)
         {
@@ -25,13 +26,13 @@ namespace CourseProject
         public void drawShape(Graphics graphics)
         {
             Pen pen = new Pen(color, 3);
-            graphics.DrawEllipse(pen, loc.x, loc.y, diameter, diameter);
+            graphics.DrawEllipse(pen, loc.x - diameter / 2, loc.y - diameter / 2, diameter, diameter);
         }
 
         public void fillShape(Graphics graphics)
         {
             Brush brush = new SolidBrush(Color.White);
-            graphics.FillEllipse(brush, loc.x, loc.y, diameter, diameter);
+            graphics.FillEllipse(brush, loc.x - diameter / 2, loc.y - diameter / 2, diameter, diameter);
         }
 
         public double shapeArea()

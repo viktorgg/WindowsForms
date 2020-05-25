@@ -20,6 +20,7 @@ namespace CourseProject
             textBox2.Text = oldRec.height.ToString();
             textBox4.Text = oldRec.loc.x.ToString();
             textBox3.Text = oldRec.loc.y.ToString();
+            textBox5.Text = oldRec.angle.ToString();
             comboBox1.Text = oldRec.color.Name;
         }
 
@@ -28,8 +29,9 @@ namespace CourseProject
             int width = int.Parse(textBox1.Text);
             int height = int.Parse(textBox2.Text);
             Color color = Color.FromName(comboBox1.SelectedItem.ToString());
-            Location newLoc = new Location(int.Parse(textBox4.Text), int.Parse(textBox3.Text));
-            shape = new Rectangle(shape.name, newLoc, width, height, color);
+            Location loc = new Location(int.Parse(textBox4.Text), int.Parse(textBox3.Text));
+            int angle = int.Parse(textBox5.Text);
+            shape = new Rectangle(shape.name, loc, width, height, color, angle);
             Close();
         }
     }
