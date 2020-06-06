@@ -17,6 +17,9 @@ namespace CourseProject
         public Location loc { get; set; }
         public int angle { get; set; }
 
+        public Rectangle()
+        { }
+
         public Rectangle(string name, Location loc, int width, int height, Color color, int angle)
         {
             this.name = name;

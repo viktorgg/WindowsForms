@@ -51,7 +51,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
-            this.button1.Location = new System.Drawing.Point(500, 156);
+            this.button1.Location = new System.Drawing.Point(486, 159);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 56);
             this.button1.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(500, 253);
+            this.button2.Location = new System.Drawing.Point(486, 234);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 56);
             this.button2.TabIndex = 2;
@@ -74,7 +74,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(90, 123);
+            this.listBox1.Location = new System.Drawing.Point(147, 123);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(188, 212);
             this.listBox1.TabIndex = 3;
@@ -82,7 +82,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
-            this.button3.Location = new System.Drawing.Point(90, 351);
+            this.button3.Location = new System.Drawing.Point(147, 352);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(93, 42);
             this.button3.TabIndex = 4;
@@ -93,7 +93,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
-            this.button4.Location = new System.Drawing.Point(189, 351);
+            this.button4.Location = new System.Drawing.Point(246, 352);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(89, 42);
             this.button4.TabIndex = 5;

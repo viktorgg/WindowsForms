@@ -98,6 +98,7 @@ namespace CourseProject
 
                     addShape(rec);
                     rec.drawShape(graphics);
+                    SaveFileManager.serializeShape(rec);
                     shapeNumIncrement++;
                 }
             }
@@ -112,6 +113,7 @@ namespace CourseProject
 
                     addShape(circle);
                     circle.drawShape(graphics);
+                    SaveFileManager.serializeShape(circle);
                     shapeNumIncrement++;
                 }
             }
@@ -126,6 +128,7 @@ namespace CourseProject
 
                     addShape(triangle);
                     triangle.drawShape(graphics);
+                    SaveFileManager.serializeShape(triangle);
                     shapeNumIncrement++;
                 }
             }
@@ -219,13 +222,19 @@ namespace CourseProject
         // Select the 'Area' button to get area of shape
         private void button7_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Math.Round(shapeToEdit.shapeArea(), 3).ToString(), "Area", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (shapeToEdit != null)
+            {
+                MessageBox.Show(Math.Round(shapeToEdit.shapeArea(), 3).ToString(), "Area", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         // Select the 'P' button to get perimeter of shape
         private void button8_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Math.Round(shapeToEdit.shapePerimeter(), 3).ToString(), "Perimeter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (shapeToEdit != null)
+            {
+                MessageBox.Show(Math.Round(shapeToEdit.shapePerimeter(), 3).ToString(), "Perimeter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         // Select the 'Clear Canvas' button to clear all drawings

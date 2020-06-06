@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CourseProject
 {
-    class Triangle : Shape
+    public class Triangle : Shape
     {
         private Location firstAngle { get; set; }
         private Location secondAngle { get; set; }
@@ -30,6 +30,9 @@ namespace CourseProject
             secondAngle = new Location(loc.x + side / 2, loc.y + side / 2);
             thirdAngle = new Location(loc.x, loc.y - side / 2);
         }
+
+        public Triangle()
+        { }
 
         public void drawShape(Graphics graphics)
         {

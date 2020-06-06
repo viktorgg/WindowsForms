@@ -11,6 +11,9 @@ namespace CourseProject
         public int x { get; set; }
         public int y { get; set; }
 
+        public Location()
+        { }
+
         public Location(int x, int y)
         {
             this.x = x;

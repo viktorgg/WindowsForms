@@ -7,13 +7,16 @@ using System.Threading.Tasks;
 
 namespace CourseProject
 {
-    class Circle : Shape
+    public class Circle : Shape
     {
         public string name { get; set; }
         public int diameter { get; set; }
         public Color color { get; set; }
         public Location loc { get; set; }
         public int angle { get; set; }
+
+        public Circle()
+        { }
 
         public Circle(string name, Location loc, int diameter, Color color)
         {
